@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 const Projects = () => {
   const projects = [
     {
-      title: 'Project One',
-      description: 'A web application that helps users track their daily tasks and manage their time effectively. Built with React and Node.js.',
-      tags: ['React', 'Node.js', 'MongoDB', 'Express'],
+      title: 'IPL (Ball-By-Ball) Data Analysis & Visulization Apache Spark',
+      description: 'Conducted in-depth analysis of IPL cricket data using Apache Spark, focusing on ball-by-ball records to uncover trends and patterns in player performance, team strategies, and match dynamics, Utilized data visualization tools to present insights from complex data sets.',
+      tags: ['Apache Spark', 'Python', 'PowerBI'],
       links: {
         github: 'https://github.com/yourusername/project-one',
         live: 'https://project-one.com'
@@ -13,9 +13,9 @@ const Projects = () => {
       image: '/project1.jpg'
     },
     {
-      title: 'Project Two',
-      description: 'An e-commerce platform with a modern UI and seamless payment integration. Developed using Next.js and Stripe.',
-      tags: ['Next.js', 'Stripe', 'TailwindCSS', 'PostgreSQL'],
+      title: 'Telegram Bot For Converting Drive/Mirror Links Into Telegram File',
+      description: 'Developed an automated Telegram bot using Python, Shell scripting, and external libraries to convert Drive and Mirror links into downloadable Telegram files.',
+      tags: ['Python', 'Shell', 'Telegram Bot'],
       links: {
         github: 'https://github.com/yourusername/project-two',
         live: 'https://project-two.com'

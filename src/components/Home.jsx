@@ -16,7 +16,7 @@ const Home = () => {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-text-primary">
-            Hi, I'm <span className="text-link-color">Your Name</span>
+            Hi, I'm <span className="text-link-color">Vedant Patil</span>
           </h1>
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-secondary">
@@ -24,9 +24,10 @@ const Home = () => {
           </h2>
 
           <p className="text-text-secondary text-lg max-w-2xl">
-            I'm a software developer passionate about creating exceptional digital experiences.
-            I specialize in building modern web applications with a focus on performance,
-            accessibility, and user experience.
+          Dynamic and results-driven Data Science professional with expertise in data visualization and attention to detail.
+          Proficient in Python and R for data manipulation, analysis, and visualization, leveraging tools to extract insights
+          from complex data sets. Eager to contribute to impactful projects with a strong foundation in data-driven
+          decision-making.
           </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
@@ -65,7 +66,7 @@ const Home = () => {
           <div className="pt-12">
             <h3 className="text-text-secondary font-semibold mb-4">Tech Stack</h3>
             <div className="flex flex-wrap gap-2">
-              {['React', 'Node.js', 'TypeScript', 'TailwindCSS', 'Next.js', 'MongoDB'].map((tech, index) => (
+              {['Data Science', 'Python', 'SQL', 'Excle', 'PowerBI', 'Tableau', 'MongoDB'].map((tech, index) => (
                 <span 
                   key={index}
                   className="px-3 py-1 rounded-full bg-header-bg border border-border-color text-text-secondary text-sm"
