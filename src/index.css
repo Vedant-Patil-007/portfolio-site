@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-primary text-text-primary;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-text-primary font-semibold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-secondary text-white rounded-md hover:bg-btn-hover transition-colors duration-200 font-semibold text-sm;
+  }
+
+  .btn-outline {
+    @apply px-4 py-2 border border-border-color text-text-primary rounded-md hover:bg-search-hover hover:border-text-secondary transition-colors duration-200 text-sm;
+  }
+
+  .section-heading {
+    @apply text-2xl md:text-3xl font-semibold mb-8 text-text-primary;
+  }
+
+  .card {
+    @apply bg-header-bg border border-border-color rounded-lg p-4 hover:border-text-secondary transition-colors duration-200;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-primary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-border-color rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-text-secondary;
+}
+
+/* Selection */
+::selection {
+  @apply bg-link-color/20 text-text-primary;
+}
+
+/* Focus Outline */
+*:focus {
+  @apply outline-none ring-2 ring-link-color ring-opacity-50;
+}
