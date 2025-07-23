@@ -7,27 +7,33 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#0d1117',
-        secondary: '#238636',
-        tertiary: '#8b949e',
-        'header-bg': '#161b22',
-        'border-color': '#30363d',
-        'link-color': '#58a6ff',
-        'btn-hover': '#2ea043',
-        'text-primary': '#c9d1d9',
-        'text-secondary': '#8b949e',
-        'search-bg': '#0d1117',
-        'search-border': '#30363d',
-        'search-hover': '#161b22',
-        'cmd-bg': 'rgba(13, 17, 23, 0.95)',
+        primary: '#000000',
+        secondary: '#06B6D4', // Cyan-500
+        tertiary: '#0EA5E9', // Sky-500
+        'header-bg': '#111111',
+        'border-color': 'rgba(6, 182, 212, 0.3)', // Cyan with opacity
+        'text-primary': '#FFFFFF',
+        'text-secondary': 'rgba(255, 255, 255, 0.7)',
+        'link-color': '#06B6D4',
+        'btn-hover': '#0891B2', // Cyan-600
+        'search-hover': 'rgba(6, 182, 212, 0.1)'
       },
       fontFamily: {
-        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
-        mono: ['SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', 'monospace'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace']
       },
       boxShadow: {
-        'cmd': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        'glow': '0 0 20px rgba(6, 182, 212, 0.5)',
+        'glow-lg': '0 0 30px rgba(6, 182, 212, 0.7)'
       },
+      animation: {
+        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+        'float': 'float 3s ease-in-out infinite',
+        'scan': 'scan-line 2s linear infinite'
+      },
+      backdropBlur: {
+        'xs': '2px'
+      }
     },
   },
   plugins: [],
