@@ -1,6 +1,25 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 const Contact = () => {
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    service: '',
+    message: ''
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = e => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    // You can integrate with an API or email service here
+    setSubmitted(true);
+  };
+
   return (
     <section className="pt-24 pb-16">
       <motion.div
@@ -20,12 +39,102 @@ const Contact = () => {
         </p>
 
         <div className="space-y-6">
-          <a
-            href="mailto:your.email@example.com"
+          {/* <a
+            href="vspatil2004@gmail.com"
             className="btn-primary inline-block"
           >
             Say Hello
-          </a>
+          </a> */}
+
+          {/* Contact Form */}
+          <div className="flex justify-center ">
+            <form
+              onSubmit={handleSubmit}
+              className="w-full max-w-2xl bg-gradient-to-br from-cyan-900/20 to-cyan-800/400 rounded-2xl p-10 shadow-2x1 space-y-8 border border-cyan-700"
+            >
+              {submitted ? (
+                <div className="text-green-500 font-semibold text-lg text-center">
+                  Thank you for reaching out! I'll get back to you soon.
+                </div>
+              ) : (
+                <>
+                  <div className="grid grid-cols-1 sm:grid-cols-1 gap-7 ">
+                    <div>
+                      <label className="block text-left text-cyan-300 font-semibold mb-1 " htmlFor="name">
+                        Name
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={form.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-2 rounded-lg bg-dark-navy text-light-slate border border-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition"
+                        placeholder="Your Name"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-left text-cyan-300 font-semibold mb-1" htmlFor="email">
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={form.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-2 rounded-lg bg-dark-navy text-light-slate border border-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition"
+                        placeholder="you@email.com"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-left text-cyan-300 font-semibold mb-1" htmlFor="service">
+                      Service Interested In
+                    </label>
+                    <select
+                      id="service"
+                      name="service"
+                      value={form.service}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-2 rounded-lg bg-dark-navy text-gray-400 border border-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition"
+                    >
+                      <option value="" disabled>Select a service</option>
+                      <option value="Data Science Consulting">Data Science Consulting</option>
+                      <option value="AI/ML Solutions">AI/ML Solutions</option>
+                      <option value="Data Visualization">Data Visualization</option>
+                      <option value="Custom Project">Custom Project</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-left text-cyan-300 font-semibold mb-1" htmlFor="message">
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={form.message}
+                      onChange={handleChange}
+                      required
+                      rows={5}
+                      className="w-full px-4 py-2 rounded-lg bg-dark-navy text-light-slate border border-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition resize-none"
+                      placeholder="How can I help you?"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="btn-primary w-full mt-2 py-3 text-lg rounded-lg font-semibold tracking-wide shadow-lg"
+                  >
+                    Send Message
+                  </button>
+                </>
+              )}
+            </form>
+          </div>
 
           <div className="flex justify-center space-x-8 pt-8">
             {/* GitHub */}
