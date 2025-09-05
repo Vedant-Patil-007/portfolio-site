@@ -1,15 +1,26 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const About = () => {
   const skills = [
-    'JavaScript (ES6+)',
-    'React',
-    'Node.js',
-    'TypeScript',
-    'Python',
-    'HTML & CSS',
-    'TailwindCSS',
-    'Git'
+    "Python",
+    "SQL",
+    "Pandas",
+    "NumPy",
+    "TensorFlow",
+    "PyTorch",
+    "Scikit-learn",
+    "Hugging Face",
+    "LangChain",
+    "Apache Spark",
+    "Tableau",
+    "Power BI",
+    "Matplotlib",
+    "Seaborn",
+    "FastAPI",
+    "Docker",
+    "AWS",
+    "GCP",
+    "Git"
   ];
 
   return (
@@ -28,21 +39,36 @@ const About = () => {
         <div className="grid md:grid-cols-3 gap-8">
           <div className="md:col-span-2 space-y-4">
             <p>
-              Hello! I'm [Your Name], and I enjoy creating things that live on the internet.
-              My interest in web development started back in [year] when I decided to try
-              editing custom Tumblr themes — turns out hacking together a custom reblog
-              button taught me a lot about HTML & CSS!
+              Hello! I'm Vedant Patil, an aspiring Data Scientist and AI
+              Researcher with a strong foundation in Machine Learning, Deep
+              Learning, and Generative AI. My passion lies in bridging theory
+              with practice — building AI systems that not only solve problems
+              but also create meaningful impact at scale.
             </p>
 
             <p>
-              Fast-forward to today, and I've had the privilege of working at [relevant experience].
-              My main focus these days is building accessible, inclusive products and digital
-              experiences for a variety of clients.
+              I’ve developed projects spanning NLP, Reinforcement Learning, and
+              Generative AI, from mental health analysis on social media data to
+              AI-powered healthcare Q&A systems. Currently, I’m conducting
+              research titled “Measuring Neural Activity in the Age of AI: EEG
+              Analysis of Professionals With and Without AI Assistance”
+              (completion expected Oct 2025), exploring how AI influences human
+              cognition and productivity.
             </p>
 
             <p>
-              Here are a few technologies I've been working with recently:
+              Beyond research, I’ve mentored 50+ students in Python and AI
+              frameworks, taught practical data science workflows, and led
+              technical communities like Team DevKraft (100+ members) and ITSA,
+              collectively impacting over 1,200 students through hackathons,
+              workshops, and coding initiatives. Today, my focus is on advancing
+              AI-driven solutions, data strategy, and scalable systems, while
+              contributing to the open-source ecosystem through tools like
+              Hugging Face and LangChain. 
             </p>
+
+            <p>Here are some of the core technologies
+            and frameworks I work with:</p>
 
             <ul className="grid grid-cols-2 gap-2 mt-4">
               {skills.map((skill, index) => (

@@ -61,7 +61,7 @@ const Navbar = () => {
             ))}
 
             <a
-              href="https://github.com/vedantpatil2024"
+              href="https://github.com/Vedant-Patil-007"
               target="_blank"
               rel="noopener noreferrer"
               className="ml-4 px-4 py-2 rounded-lg text-sm font-medium bg-link-color/20 backdrop-blur-sm text-link-color hover:bg-link-color/30 transition-all duration-200"
