@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white min-h-screen;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-black/30;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-cyan-500/50 rounded-full hover:bg-cyan-500/70 transition-colors;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg bg-cyan-500 text-black font-semibold hover:bg-cyan-600
+    transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 rounded-lg border border-cyan-500 text-cyan-400
+    hover:bg-cyan-500/10 transition-all duration-300;
+  }
+
+  .card {
+    @apply p-6 rounded-xl bg-black/30 backdrop-blur-sm border border-cyan-500/30
+    hover:border-cyan-500/50 transition-all duration-300;
+  }
+
+  .section-heading {
+    @apply text-2xl font-bold text-cyan-300 mb-6;
+  }
+}
+
+/* JARVIS-themed animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(6, 182, 212, 0.8);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Holographic effect */
+.hologram {
+  position: relative;
+  overflow: hidden;
+}
+
+.hologram::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(6, 182, 212, 0.1) 50%,
+    transparent 100%
+  );
+  animation: scan-line 2s linear infinite;
+  pointer-events: none;
+}
+
+/* Glowing text effect */
+.glow-text {
+  text-shadow: 0 0 10px rgba(6, 182, 212, 0.5),
+               0 0 20px rgba(6, 182, 212, 0.3),
+               0 0 30px rgba(6, 182, 212, 0.1);
+}
+
+/* Floating animation */
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulsing glow effect */
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
