@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import myImg from '/my-img.png';
 
 const About = () => {
   const skills = [
@@ -84,7 +85,7 @@ const About = () => {
           {/* <div className="relative group"> */}
             {/* <div className="relative z-10"> */}
               <img
-                src="/my-img.png"
+                src={myImg}
                 alt="Profile"
                 width="500px"
                 height="3000px"
