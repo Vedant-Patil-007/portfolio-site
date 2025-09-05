@@ -210,6 +210,11 @@ const JarvisUI = () => {
         </div>
       ))}
     </div>
+    <div className="flex flex-col flex-wrap p-2 md:p-4">
+      <p className="text-sm md:text-base break-words overflow-auto">
+        {/* Your text content here */}
+      </p>
+    </div>
   </div>
 );
 };
