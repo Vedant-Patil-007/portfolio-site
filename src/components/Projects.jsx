@@ -61,56 +61,49 @@ const Projects = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="max-w-4xl mx-auto"
+        className="px-8"
       >
         <h2 className="section-heading">
           <span className="text-secondary font-mono">02. </span>
           Some Things I've Built
         </h2>
 
-        <div className="space-y-24">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2 }}
-              className="relative grid md:grid-cols-2 gap-8"
-            >
-              {/* Project Image */}
-              <div className="relative group order-1 md:order-none">
-                <a href={project.links.live} target="_blank" rel="noopener noreferrer">
-                  <div className="relative z-10">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="rounded-lg w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-navy/70 hover:bg-transparent transition-all duration-300"></div>
-                  </div>
-                </a>
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+           {projects.map((project, index) => (
+             <motion.div
+               key={index}
+               initial={{ opacity: 0, y: 20 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ delay: index * 0.2 }}
+               className="bg-light-navy p-6 rounded-lg border border-navy-light flex flex-col hover:shadow-lg hover:bg-navy transition-all duration-300"
+             >
+              <a href={project.links.live} target="_blank" rel="noopener noreferrer" className="block mb-4">
+                <div className="relative group">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="rounded-lg w-full h-48 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-navy/70 group-hover:bg-transparent transition-all duration-300"></div>
+                </div>
+              </a>
 
-              {/* Project Info */}
-              <div className="md:px-6">
-                <p className="font-mono text-secondary mb-2">Featured Project</p>
-                <h3 className="text-2xl font-bold text-lightest-slate mb-4">
-                  <a href={project.links.live} target="_blank" rel="noopener noreferrer" 
+              <div className="flex flex-col flex-grow">
+                <h3 className="text-xl font-bold text-lightest-slate mb-2">
+                  <a href={project.links.live} target="_blank" rel="noopener noreferrer"
                      className="hover:text-secondary transition-colors duration-300">
                     {project.title}
                   </a>
                 </h3>
-                <div className="bg-light-navy p-6 rounded-lg mb-4">
-                  <p className="text-light-slate">{project.description}</p>
-                </div>
-                <ul className="flex flex-wrap gap-3 mb-4">
+                <p className="text-light-slate text-sm mb-4 flex-grow">{project.description}</p>
+                <ul className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, tagIndex) => (
-                    <li key={tagIndex} className="font-mono text-sm text-secondary">
+                    <li key={tagIndex} className="font-mono text-xs text-secondary bg-navy px-2 py-1 rounded">
                       {tag}
                     </li>
                   ))}
                 </ul>
-                <div className="flex space-x-4">
+                <div className="flex space-x-4 mt-auto">
                   <a href={project.links.github} target="_blank" rel="noopener noreferrer"
                      className="text-lightest-slate hover:text-secondary transition-colors duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
