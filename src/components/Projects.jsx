@@ -2,6 +2,36 @@ import { motion } from 'framer-motion';
 
 const Projects = () => {
   const projects = [
+      {
+      title: 'Mental Health Analysis using Social Media Data (NLP)',
+      description: 'Engineered NLP pipeline (BERT, Transformers, TF-IDF), performed data cleaning and interpretation on 50k+ social media posts to ensure reliability and actionable insights.Achieving accuracy by 18% over baseline ML models, deployed via Hugging Face Spaces for real-time explainable AI Deployed explainable AI (SHAP/LIME) on Streamlit/Hugging Face Spaces for real-time, ethical analysis.',
+      tags: ['Hugging Face', 'Python', 'Transformers', 'Scikit-learn', 'Streamlit'],
+      links: {
+        github: 'https://github.com/Vedant-Patil-007/Mental-Health-Analysis-NLP-/tree/main',
+        live: 'https://vedantpatil.in/projects'
+      },
+      image: '/project1.jpg'
+    },
+      {
+      title: 'Generative AI-Powered Healthcare Q&A System',
+      description: 'Fine-tuned LLMs with RAG, FAISS, and vector databases for accurate, source-grounded medical answers. Applied data strategy principles to align ML pipeline with accurate, business-relevant outputs. Integrated LangChain, FastAPI, CI/CD, Docker, AWS/GCP for scalable low-latency deployment. Released demo on Hugging Face Spaces (Gradio), contributing to open-source Generative AI in healthcare.',
+      tags: ['FAISS', 'Python', 'LangChain', 'FastAPI', 'Docker'],
+      links: {
+        github: 'https://github.com/Vedant-Patil-007/Generative-AI-Powered-Healthcare-Q-A-System/tree/main',
+        live: 'https://vedantpatil.in/projects'
+      },
+      image: '/project1.jpg'
+    },
+      {
+      title: 'Autonomous Stock Portfolio Manager (Reinforcement Learning + Finance)',
+      description: 'Designed RL agent (Q-learning, DQN) with LSTM, ARIMA, Prophet for adaptive stock trading. Built scalable pipeline with preprocessing, data warehousing, and reinforcement learning for decision-making. Processed datasets via Yahoo Finance API, Pandas, NumPy, simulating 12–15% improved returns. Built pipeline with PyTorch, TensorFlow, Scikit-learn for reward optimization and volatility reduction.',
+      tags: ['PyTorch', 'Python', 'Prophet','Yahoo Finance API', 'Jupyter Notebook'],
+      links: {
+        github: 'https://github.com/Vedant-Patil-007/Autonomous-Stock-Portfolio-Manager-Reinforcement-Learning-Finance-/tree/main',
+        live: 'https://vedantpatil.in/projects'
+      },
+      image: '/project1.jpg'
+    },
     {
       title: 'IPL (Ball-By-Ball) Data Analysis & Visulization Apache Spark',
       description: 'Conducted in-depth analysis of IPL cricket data using Apache Spark, focusing on ball-by-ball records to uncover trends and patterns in player performance, team strategies, and match dynamics, Utilized data visualization tools to present insights from complex data sets.',
