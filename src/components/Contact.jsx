@@ -139,7 +139,7 @@ const Contact = () => {
           <div className="flex justify-center space-x-8 pt-8">
             {/* GitHub */}
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/Vedant-Patil-007"
               target="_blank"
               rel="noopener noreferrer"
               className="text-light-slate hover:text-secondary transition-colors duration-300"
@@ -151,7 +151,7 @@ const Contact = () => {
 
             {/* LinkedIn */}
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/vedant-patil-34b098235/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-light-slate hover:text-secondary transition-colors duration-300"
@@ -163,7 +163,7 @@ const Contact = () => {
 
             {/* Twitter */}
             <a
-              href="https://twitter.com/yourusername"
+              href="https://x.com/__VedantPatil"
               target="_blank"
               rel="noopener noreferrer"
               className="text-light-slate hover:text-secondary transition-colors duration-300"
