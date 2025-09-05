@@ -20,7 +20,7 @@ const About = () => {
     "Docker",
     "AWS",
     "GCP",
-    "Git"
+    "Git",
   ];
 
   return (
@@ -64,13 +64,14 @@ const About = () => {
               workshops, and coding initiatives. Today, my focus is on advancing
               AI-driven solutions, data strategy, and scalable systems, while
               contributing to the open-source ecosystem through tools like
-              Hugging Face and LangChain. 
+              Hugging Face and LangChain.
             </p>
 
-            <p>Here are some of the core technologies
-            and frameworks I work with:</p>
+            <p>
+              Here are some of the core technologies and frameworks I work with:
+            </p>
 
-            <ul className="grid grid-cols-2 gap-2 mt-4">
+            <ul className="grid grid-cols-3 gap-2">
               {skills.map((skill, index) => (
                 <li key={index} className="flex items-center space-x-2">
                   <span className="text-secondary">▹</span>
@@ -80,17 +81,19 @@ const About = () => {
             </ul>
           </div>
 
-          <div className="relative group">
-            <div className="relative z-10">
+          {/* <div className="relative group"> */}
+            {/* <div className="relative z-10"> */}
               <img
-                src="/your-image.jpg"
+                src="/my-img.png"
                 alt="Profile"
+                width="500px"
+                height="3000px"
                 className="rounded grayscale hover:grayscale-0 transition-all duration-300"
               />
             </div>
-            <div className="absolute inset-0 border-2 border-secondary rounded translate-x-5 translate-y-5 -z-10 group-hover:translate-x-4 group-hover:translate-y-4 transition-all duration-300"></div>
-          </div>
-        </div>
+            {/* <div className="absolute inset-0 border-2 border-secondary rounded translate-x-5 translate-y-5 -z-10 group-hover:translate-x-4 group-hover:translate-y-4 transition-all duration-300"></div> */}
+          {/* </div> */}
+        {/* </div> */}
       </motion.div>
     </section>
   );
