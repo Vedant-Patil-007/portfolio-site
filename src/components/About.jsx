@@ -30,7 +30,7 @@ const About = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="max-w-4xl mx-auto"
+        className="px-8"
       >
         <h2 className="section-heading">
           <span className="text-secondary font-mono">01. </span>
@@ -82,19 +82,17 @@ const About = () => {
             </ul>
           </div>
 
-          {/* <div className="relative group"> */}
-            {/* <div className="relative z-10"> */}
+          <div className="relative group">
+            <div className="relative z-10">
               <img
                 src={myImg}
                 alt="Profile"
-                width="500px"
-                height="3000px"
-                className="rounded grayscale hover:grayscale-0 transition-all duration-300"
+                className="rounded grayscale hover:grayscale-0 transition-all duration-300 w-full"
               />
             </div>
-            {/* <div className="absolute inset-0 border-2 border-secondary rounded translate-x-5 translate-y-5 -z-10 group-hover:translate-x-4 group-hover:translate-y-4 transition-all duration-300"></div> */}
-          {/* </div> */}
-        {/* </div> */}
+            <div className="absolute inset-0 border-2 border-secondary rounded translate-x-5 translate-y-5 -z-10 group-hover:translate-x-4 group-hover:translate-y-4 transition-all duration-300"></div>
+          </div>
+        </div>
       </motion.div>
     </section>
   );
