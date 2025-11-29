@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,43 +21,40 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Projects', path: '/projects' },
+    { name: 'Blog', path: '/blog' },
     { name: 'Contact', path: '/contact' },
   ];
 
-  const isActive = (path) => {
-    return location.pathname === path;
-  };
+  const isActive = (path) => location.pathname === path;
 
   return (
-    <nav 
-      className={`fixed w-full top-0 z-40 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-header-bg/60 backdrop-blur-md shadow-lg' 
-          : 'bg-header-bg/40 backdrop-blur-sm'
-      }`}
+    <nav
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled || isOpen
+        ? 'bg-[var(--bg-primary)]/80 backdrop-blur-md border-b border-white/10 shadow-lg'
+        : 'bg-transparent'
+        }`}
     >
-      <div className="container mx-auto px-6 py-3">
+      <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link 
-            to="/" 
-            className="text-text-primary hover:text-link-color font-bold text-2xl tracking-tight transition-colors duration-200"
+          <Link
+            to="/"
+            className="text-2xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] hover:opacity-80 transition-opacity"
           >
-            VP
+            VP<span className="text-[var(--text-primary)]">.ai</span>
           </Link>
-          
+
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-1">
-            {navItems.map((item, index) => (
+          <div className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) => (
               <Link
-                key={index}
+                key={item.name}
                 to={item.path}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                  isActive(item.path)
-                    ? 'text-link-color bg-search-hover/40 backdrop-blur-sm'
-                    : 'text-text-secondary hover:text-link-color hover:bg-search-hover/30'
-                }`}
+                className={`text-sm font-medium transition-all duration-300 relative group ${isActive(item.path) ? 'text-[var(--accent-primary)]' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
+                  }`}
               >
                 {item.name}
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-[var(--accent-primary)] transition-all duration-300 ${isActive(item.path) ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`} />
               </Link>
             ))}
 
@@ -64,7 +62,7 @@ const Navbar = () => {
               href="https://github.com/Vedant-Patil-007"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-4 px-4 py-2 rounded-lg text-sm font-medium bg-link-color/20 backdrop-blur-sm text-link-color hover:bg-link-color/30 transition-all duration-200"
+              className="px-5 py-2 rounded-full text-sm font-medium border border-[var(--accent-primary)] text-[var(--accent-primary)] hover:bg-[var(--accent-primary)] hover:text-black transition-all duration-300"
             >
               GitHub
             </a>
@@ -73,50 +71,49 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg text-text-primary hover:text-link-color hover:bg-search-hover/30 transition-colors duration-200"
+            className="md:hidden p-2 text-[var(--text-primary)] hover:text-[var(--accent-primary)] transition-colors"
             aria-label="Toggle menu"
           >
-            {isOpen ? (
-              <XMarkIcon className="h-6 w-6" />
-            ) : (
-              <Bars3Icon className="h-6 w-6" />
-            )}
+            {isOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
-        <div 
-          className={`md:hidden transition-all duration-300 overflow-hidden ${
-            isOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
-          }`}
-        >
-          <div className="py-3 space-y-1">
-            {navItems.map((item, index) => (
-              <Link
-                key={index}
-                to={item.path}
-                className={`block px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                  isActive(item.path)
-                    ? 'text-link-color bg-search-hover/40 backdrop-blur-sm'
-                    : 'text-text-secondary hover:text-link-color hover:bg-search-hover/30'
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-
-            <a
-              href="https://github.com/vedantpatil2024"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block px-4 py-2 rounded-lg text-sm font-medium bg-link-color/20 backdrop-blur-sm text-link-color hover:bg-link-color/30 transition-all duration-200"
-              onClick={() => setIsOpen(false)}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden overflow-hidden"
             >
-              GitHub
-            </a>
-          </div>
-        </div>
+              <div className="py-4 space-y-2">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${isActive(item.path)
+                      ? 'bg-[var(--accent-primary)]/10 text-[var(--accent-primary)]'
+                      : 'text-[var(--text-secondary)] hover:bg-white/5 hover:text-[var(--text-primary)]'
+                      }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+                <a
+                  href="https://github.com/Vedant-Patil-007"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-4 py-3 rounded-lg text-base font-medium text-[var(--accent-primary)] hover:bg-[var(--accent-primary)]/10 transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  GitHub
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );

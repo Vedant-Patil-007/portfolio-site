@@ -23,18 +23,15 @@
 
 @layer components {
   .btn-primary {
-    @apply px-6 py-3 rounded-lg bg-cyan-500 text-black font-semibold hover:bg-cyan-600
-    transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40;
+    @apply px-6 py-3 rounded-lg bg-cyan-500 text-black font-semibold hover:bg-cyan-600 transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40;
   }
 
   .btn-outline {
-    @apply px-6 py-3 rounded-lg border border-cyan-500 text-cyan-400
-    hover:bg-cyan-500/10 transition-all duration-300;
+    @apply px-6 py-3 rounded-lg border border-cyan-500 text-cyan-400 hover:bg-cyan-500/10 transition-all duration-300;
   }
 
   .card {
-    @apply p-6 rounded-xl bg-black/30 backdrop-blur-sm border border-cyan-500/30
-    hover:border-cyan-500/50 transition-all duration-300;
+    @apply p-6 rounded-xl bg-black/30 backdrop-blur-sm border border-cyan-500/30 hover:border-cyan-500/50 transition-all duration-300;
   }
 
   .section-heading {
@@ -44,18 +41,24 @@
 
 /* JARVIS-themed animations */
 @keyframes pulse-glow {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
   }
+
   50% {
     box-shadow: 0 0 40px rgba(6, 182, 212, 0.8);
   }
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -65,6 +68,7 @@
   0% {
     transform: translateY(-100%);
   }
+
   100% {
     transform: translateY(100%);
   }
@@ -83,12 +87,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(6, 182, 212, 0.1) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(6, 182, 212, 0.1) 50%,
+      transparent 100%);
   animation: scan-line 2s linear infinite;
   pointer-events: none;
 }
@@ -96,8 +98,8 @@
 /* Glowing text effect */
 .glow-text {
   text-shadow: 0 0 10px rgba(6, 182, 212, 0.5),
-               0 0 20px rgba(6, 182, 212, 0.3),
-               0 0 30px rgba(6, 182, 212, 0.1);
+    0 0 20px rgba(6, 182, 212, 0.3),
+    0 0 30px rgba(6, 182, 212, 0.1);
 }
 
 /* Floating animation */
