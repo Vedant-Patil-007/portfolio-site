@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import myImg from '/my-img.png';
+
 
 const About = () => {
   const skills = [
@@ -85,7 +85,7 @@ const About = () => {
           <div className="relative group">
             <div className="relative z-10">
               <img
-                src={myImg}
+                src="/my-img.png"
                 alt="Profile"
                 className="rounded grayscale hover:grayscale-0 transition-all duration-300 w-full"
               />
