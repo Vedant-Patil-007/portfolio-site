@@ -38,9 +38,12 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <Link
             to="/"
-            className="text-2xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
           >
-            VP<span className="text-[var(--text-primary)]">.ai</span>
+            <img src="/logo.png" alt="Logo" className="h-12 w-12 object-contain" />
+            <span className="text-2xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)]">
+              VP<span className="text-[var(--text-primary)]">.ai</span>
+            </span>
           </Link>
 
           {/* Desktop Menu */}
